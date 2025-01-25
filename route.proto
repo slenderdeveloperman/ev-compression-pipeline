@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package route;
+
+message Point {
+    float lat = 1;
+    float lng = 2;
+    optional float elevation = 3;
+    optional int64 timestamp = 4;
+}
+
+message Route {
+    repeated Point points = 1;
+    RouteMetadata metadata = 2;
+}
+
+message RouteMetadata {
+    float distance = 1;
+    int32 duration = 2;
+    string startPoint = 3;
+    string endPoint = 4;
+} 
